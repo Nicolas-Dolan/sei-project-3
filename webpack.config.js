@@ -1,8 +1,8 @@
+require('dotenv').config()
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const DotEnv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/app.js',
@@ -40,7 +40,10 @@ module.exports = {
     }
   },
   plugins: [
-    new DotEnv(),
+    new webpack.EnvironmentPlugin([
+      'CLOUDINARY_USER_KEY',
+      'CLOUDINARY_UPLOAD_PRESET'
+    ]),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
