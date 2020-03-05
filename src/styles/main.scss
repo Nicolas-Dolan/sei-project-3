@@ -1,0 +1,747 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Karla|Yeseva+One&display=swap');
+
+// Set your brand colors
+// $purple: #8A4D76;
+// $pink: #FA7C91;
+// $brown: #757763;
+$beige-light: #E2E2E0;
+$beige-lighter: #F7F7F4;
+$yellow: #F4BD30;
+$yellow-lighter: rgb(255, 197, 50);
+$black: #3F3F3F;
+$light-black: rgb(136, 136, 136);
+$lighter-black: rgb(196, 196, 196);
+
+// Update Bulma's global variables
+$family-sans-serif: "Karla", sans-serif;
+$grey-dark: $black;
+$grey-light: $beige-light;
+$primary: $yellow;
+$link: $black;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$is-primary: $yellow;
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$input-background-color: $grey-light;
+$input-color: $black;
+$input-radius: 10px;
+
+// button variables
+$button-background-color: $yellow;
+$button-color: $beige-lighter;
+$button-border-color: $yellow;
+
+//nav bar variables
+$navbar-background-color: $beige-lighter;
+$navbar-height: 4rem;
+$navbar-item-color: $black;
+$navbar-item-hover-color: $yellow;
+$navbar-item-hover-background-color: $light-black;
+
+
+
+// Import only what you need from Bulma
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/elements/title.sass";
+@import "../../node_modules/bulma/sass/form/_all.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";
+
+// // Iimporting Carousel styleing
+// @import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+body {
+  letter-spacing: 0.5px;
+}
+
+.main-hero-title {
+  font-family: "Yeseva One", cursive;
+  font-size: 90px;
+}
+
+.subtitle-hero {
+  font-size: 30px;
+}
+
+.padding-v-10 {
+  padding: 10px 0;
+}
+
+.title {
+  font-family: "Yeseva One", cursive;
+  letter-spacing: 2px;
+}
+
+.title-underLine {
+  border-bottom: $grey-light 2px solid;
+  letter-spacing: 1px;
+}
+
+.header-small {
+  font-size: 20px;
+  letter-spacing: 1px;
+  // margin: 5px;
+  // padding: 5px;
+}
+
+.navbar-item-font {
+  font-size: 20px;
+}
+
+.navbar-logo {
+  font-family: "Yeseva One", cursive;
+  font-size: 25px;
+}
+
+.has-shadow {
+  box-shadow: $link;
+}
+
+.user-img {
+  object-fit: cover;
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+}
+
+.profile-img {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+  border-radius: 50%;
+}
+
+.user_card_container {
+  text-align: center;
+  transition: all 0.1s linear;
+  // transform: scale(0.7);
+}
+
+.user_card_container:hover {
+  transform: scale(1.1);
+}
+
+.user_card_text {
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.project_card_container {
+  text-align: center;
+  margin: 0 auto;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  width: 400px;
+  height: 263px;
+  transform: scale(0.9);
+}
+  
+.project-img {
+  object-fit: cover;
+  width:200px;
+  height:200px;
+  padding: 10px;
+}
+
+// .project-image-border {
+//   border: 5px solid $yellow;
+//   padding: 0px;
+//   border-radius: 25px;
+// }
+
+.bio-paragraph {
+  margin: 5px;
+  padding: 5px;
+}
+
+.endorse-small {
+  font-size: 12px;
+}
+
+.rounded-border-box:hover {
+  background-color: $beige-light;
+}
+
+.project-paragraph {
+  margin: 15px 60px;
+}
+
+.user-profession {
+  font-size: 15px;
+  color: $black;
+}
+
+.form-fields {
+  font-size: 15px;
+  color: $black;
+}
+
+.margin-reset {
+  margin: 0px;
+  margin-bottom: 0px;
+}
+
+.padding-reset {
+  padding: 20px;
+}
+
+.remove-padding {
+  padding: 0px;
+}
+
+.test-border {
+  border: 2px solid red;
+}
+
+// .test-border2 {
+//   border: 2px solid blue;
+// }
+
+.rounded-box {
+  background-color: $beige-light;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.yellow-rounded-box {
+  background-color: $yellow;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.rounded-border-box {
+  border: 1.5px solid $beige-light;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.project-skills {
+  display: flex;
+  justify-content: center;
+}
+
+.rounded-border-box-skills {
+  border: 1.5px solid $beige-light;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.profession-grey-box {
+  background-color: $beige-light;
+  padding: 8px;
+  margin: 3px;
+  border-radius: 15px;
+}
+
+.project-card-bio {
+  font-size: 12px;
+  padding: 10px;
+}
+
+.seperater-line { 
+  height: 2px;
+  background-color: $beige-light;
+  margin: 15px;
+}
+
+.comment-line {
+  height: 2px;
+  background-color: $beige-light;
+  margin: 0px;
+  padding: 0px;
+}
+
+.comment-info-text {
+  font-size: 15px;
+}
+
+.skill-circle {
+  background-color: $yellow;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position:relative;
+  left:-30px;
+}
+
+textarea {
+  outline: none;
+  width: 100%;
+}
+
+.text-area-form {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.skills-header {
+  margin: 10px;
+}
+
+.collab-message-board-text {
+  height: 60px;
+  font-size: 15px;
+}
+
+.add-margin {
+  margin: 5px;
+}
+
+.profession-parent {
+  display: flex;
+}
+.project_card_img_text_container {
+  display: flex;
+  border-bottom: 1px solid $beige-light;
+}
+
+.project_card_header_text {
+  padding: 5px;
+}
+
+.project_card_main_header {
+  font-size: 20px;
+}
+
+.project_card_text {
+  padding: 20px;
+  height: 200px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project_card_text p {
+  overflow: hidden;
+}
+
+.project_card_skills {
+  background: $black;
+  color: $beige-lighter;
+  border-radius: 15px;
+  padding: 2px 5px;
+  margin: 3px 0;
+  font-size: 13px;
+}
+
+.discovery_container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+
+section.discover_counter_container {
+  margin: -80px 0 0 0;
+}
+
+.discovery_inner_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.discovery_subtitle {
+  font-weight: 600;
+}
+
+.discovery_title {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.discovery_line_break {
+  height: 1px;
+  background: $beige-light;
+  flex: 1;
+  margin-bottom: 24px;
+  margin-left: 20px;
+}
+
+.discovery_title_container {
+  display: flex;
+  align-items: center;
+}
+
+.discovery_subtitle, .discovery_title {
+  margin-left: 60px;
+}
+
+.collaborator-circles {
+  justify-content: center;
+}
+
+.comment-image {
+  object-fit: cover;
+  width:80px;
+  height:80px;
+  border-radius: 50%;
+}
+
+.full-width {
+  width: 100vw;
+}
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-vertical {
+  display: flex;
+  align-items: center;
+}
+
+// CAROUSEL
+
+.project_card_outer_container_test {
+  width: 100%;
+}
+
+div.alice-carousel {
+  margin: 0 0 -80px 0
+}
+
+
+div.alice-carousel__wrapper {
+  overflow: visible;
+  overflow-y: visible;
+  height: 100%;
+}
+
+div.alice-carousel__next-btn {
+  text-align: right;
+}
+
+div.alice-carousel__prev-btn {
+  text-align: left;
+}
+
+div.alice-carousel__next-btn, div.alice-carousel__prev-btn {
+  position: relative;
+  top: -165px;
+  display: inline-block;
+  pointer-events: none;
+}
+
+p.alice-carousel__next-btn-item, p.alice-carousel__prev-btn-item {
+  height: 40px;
+  width: 40px;
+  background: $yellow;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  transition: all 0.05s linear;
+  pointer-events: all;
+}
+
+div.alice-carousel__next-btn-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+p.alice-carousel__next-btn-item {
+  flex-direction: row-reverse;
+}
+
+p.alice-carousel__next-btn-item:hover, p.alice-carousel__prev-btn-item:hover {
+  color: $beige-lighter;
+}
+
+// NAV Custom 
+
+.custom_nav {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid $lighter-black;
+}
+
+.section_padding {
+  padding-top: 4rem;
+  box-sizing: border-box;
+}
+
+
+.request_outer_container {
+  position: relative;
+}
+
+.request_list {
+  position: absolute;
+  top: 70px;
+  z-index: 999;
+  width: 300px;
+  right: 10px;
+  background: $beige-light;
+  border-radius: 5px;
+
+}
+
+.single_request {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid $beige-lighter;
+}
+
+.single_request:last-of-type {
+  border-bottom: 0px solid $black;
+}
+
+.single_request_button {
+  display: flex;
+  align-items: center;
+}
+
+.column_search {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.border {
+  height: 100vh;
+}
+
+.padding {
+  padding: 20px 10px;
+}
+.pending_header_container {
+  display: flex;
+  align-items: center;
+}
+
+.pending_project_preview {
+  // display: inline-block;
+  width: 40px;
+  // height: 30px;
+  background-size: cover;
+  background-position: center;
+}
+
+.single_request_button > button {
+  font-size: 13px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// SEARCHING BELOW
+
+.outer_search_container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.search_flex_container {
+  display: flex;
+  height: 100%;
+}
+
+.search_container_element {
+  flex: 2;
+  background: $beige-light;
+}
+
+.search_aside_container {
+  background: $beige-lighter;
+  flex: 0.8;
+  padding: 20px 50px;
+  -webkit-box-shadow: 21px 0px 46px -46px rgba(0,0,0,0.75);
+  -moz-box-shadow: 21px 0px 46px -46px rgba(0,0,0,0.75);
+  box-shadow: 21px 0px 46px -46px rgba(0,0,0,0.75);
+  z-index: 1;
+}
+
+.search_results_container {
+  overflow: scroll;
+}
+
+.user_results_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.project_results_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.search_project_card {
+  margin: 20px 0;
+}
+
+.search_user_card {
+  margin: 40px 30px;
+}
+
+.radio_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search_radios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.custom_radio {
+  margin-bottom: 10px;
+}
+
+.search_placeholder {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_placeholder_text {
+  font-size: 40px;
+  // font-weight: 600;
+}
+
+.custom_radio_button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: $lighter-black;
+  color: rgb(0, 0, 0);
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;     
+  margin-right: 7px;
+  outline: none;
+}
+
+// .custom_radio_button::before {
+//   position: absolute;
+//   font: 13px/1 'Open Sans', sans-serif;
+//   left: 11px;
+//   top: 7px;
+//   content: '\02143';
+//   transform: rotate(40deg);
+// }
+
+.custom_radio_button:hover {
+  background-color: $beige-light;
+}
+
+.custom_radio_button:checked {
+  background-color: $light-black;
+}
+
+// PROJECT SHOW PAGE
+
+.add-collab-button {
+  background-image: url(https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-math-icon-download-icons-9.png);
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid #E2E2E0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.1s all linear;
+}
+
+.add-collab-button:hover {
+  background-color: $beige-light;
+}
+
+.collab_add_search {
+  border-radius: 10px;
+  padding: 40px 20px;
+  width: 40vw;
+  height:80vh;
+  overflow: scroll;
+  background: $beige-lighter;
+}
+
+.collab_search_result {
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: $lighter-black;
+}
+
+.like_container {
+  padding: 5px 10px;
+  background: $yellow;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.05s linear;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.like_container:hover {
+  background: $yellow-lighter;
+}
+
+// .gallery_container::before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   width: 100vw;
+//   height: 250px;
+//   background: rgba(0, 0, 0, 0);
+//   background: linear-gradient(90deg, rgba(247,247,244,1) 0%, rgba(247,247,244,0) 15%, rgba(247,247,244,0) 50%, rgba(247,247,244,0) 85%, rgba(247,247,244,1) 100%);
+//   z-index: 1;
+//   pointer-events: none;
+// }
+
+.messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  margin: 7px;
+}
+
+.centerIt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gridIt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
