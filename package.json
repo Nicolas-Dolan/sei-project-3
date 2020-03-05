@@ -10,7 +10,9 @@
     "seed": "node db/seeds.js",
     "css-build": "node-sass --omit-source-map-url src/styles/main.scss src/styles/main.css",
     "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node index"
   },
   "dependencies": {
     "axios": "^0.19.2",
