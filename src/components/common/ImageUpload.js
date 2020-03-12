@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 const userKey = process.env.CLOUDINARY_USER_KEY
 const uploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET
+console.log(userKey)
+console.log(uploadPreset)
 
 
 class ImageUpload extends React.Component {
