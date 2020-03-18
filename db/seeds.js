@@ -15,7 +15,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
           password: 'pass',
           passwordConfirmation: 'pass',
           bio: 'This is a bio for Nick and this is a test. More information to come',
-          profileImage: 'https://imgur.com/k7fuGX5',
+          profileImage: 'https://i.imgur.com/k7fuGX5.jpg',
           location: 'London',
           level: 'Junior',
           skills: { skill: 'JavaScript' }
