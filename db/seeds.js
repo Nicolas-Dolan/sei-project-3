@@ -9,6 +9,18 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
     .then(() => {
       return User.create([
         {
+          username: 'Nick',
+          name: 'Nick',
+          email: 'nick@nick.com',
+          password: 'pass',
+          passwordConfirmation: 'pass',
+          bio: 'This is a bio for Nick and this is a test. More information to come',
+          profileImage: 'https://imgur.com/k7fuGX5',
+          location: 'London',
+          level: 'Junior',
+          skills: { skill: 'JavaScript' }
+        },
+        {
           username: 'John',
           name: 'john',
           email: 'john@john.com',
