@@ -39,7 +39,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
           password: 'pass',
           passwordConfirmation: 'pass',
           bio: 'This is a bio for jos and this is a test. More information to come',
-          profileImage: 'https://i.pinimg.com/474x/b4/fc/cc/b4fccc8af248028ac48839626c0a7120--american-man-american-actors.jpg',
+          profileImage: 'https://lh3.googleusercontent.com/proxy/s0ONdxoiWSZhUnUQslqwm0o8I-HUDYk3HarZS4Vebap4OrR577naYqj5Iy7Qh4552lxCPTrWAuLVXcUY3uCrP9T5-a2-dd2p88AT_sElYbaEBmVUtsRNslB3hKmYOZ9JbZ9zY27HxlZwa_jmUZc6RLR1buLjcyKPbeTIUyojpZtoY6yB9J_QjJ6s8sbyPJlfUEdUQotlU2rzHjuQg_uSXSU',
           location: 'Kent',
           level: 'Junior',
           skills: { skill: 'JavaScript' }
@@ -411,7 +411,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
           password: 'atlPnN',
           passwordConfirmation: 'atlPnN',
           bio: 'pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales',
-          profileImage: 'https://i.pinimg.com/474x/b4/fc/cc/b4fccc8af248028ac48839626c0a7120--american-man-american-actors.jpg',
+          profileImage: 'https://www.smartheadshots.com/blog/photos/actor-headshots-1283.jpg',
           location: 'Uścimów Stary',
           level: 'Junior',
           skills: { skill: 'Quicktime' }
