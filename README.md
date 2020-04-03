@@ -48,17 +48,17 @@ JavaScript, React, MongoDB, Express, Node.js, Axios, Sass, Bulma, Google Fonts, 
 
 ![discover](screenshots/discover.png)
 
-6. Search for projects and creatives
+6. Search for projects and creatives.
 
 ![search](screenshots/search1.png)
 
 ![search](screenshots/search2.png)
 
-7. Message someone
+7. Message someone.
 
 ![chat](screenshots/chat.png)
 
-8. Request to be part of a project
+8. Request to be part of a project.
 
 ![request](screenshots/request.png)
 
@@ -66,7 +66,108 @@ JavaScript, React, MongoDB, Express, Node.js, Axios, Sass, Bulma, Google Fonts, 
 
 I worked in a team of four for a week to create this application. We all contributed to the initial idea and design of the website, creating wireframes and taking inspiration from a website called ‘The Dots’. 
 
+![wireframe](screenshots/wireframe.png)
+
 We built the frontend using React and the backend with MongoDB, Express, and Node.js. We used Chai and Mocha to test the backend. I was involved in all parts of the website but took ownership of much of the backend, built the skeleton of a lot of the frontend, and created the messaging system.
+
+ChatBox backend model:
+
+```javascript
+const mongoose = require('mongoose')
+
+
+//! creating private collab messages schema
+const messageSchema = new mongoose.Schema({
+  text: { type: String, required: true, maxlength: 150 },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+})
+
+//! creating chatbox schema
+const chatBoxSchema = new mongoose.Schema({
+  members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  messages: [ messageSchema ]
+}, {
+  timestamps: true
+})
+
+chatBoxSchema.plugin(require('mongoose-unique-validator'))
+
+module.exports = mongoose.model('ChatBox', chatBoxSchema)
+```
+
+ChatBox backend controller
+```javascript
+const ChatBox = require('../models/chatBox')
+
+function index(req, res) {
+  ChatBox
+    .find()
+    .populate('members')
+    .then(foundChatBoxes => res.status(200).json(foundChatBoxes))
+    .catch(err => res.status(400).json(err))
+}
+
+function create(req, res) {
+  req.body.owner = req.currentUser
+  req.body.members = [req.currentUser, req.params.userId]
+  ChatBox
+    .create(req.body)
+    .then(createdChatBox => {
+      console.log(req.body)
+      return res.status(202).json(createdChatBox)
+    })
+    .catch(err => res.status(400).json(err))
+}
+
+function show(req, res) {
+  ChatBox
+    .findById(req.params.id)
+    .populate('members')
+    .populate('messages.user')
+    .then(chatBox => {
+      return res.status(202).json(chatBox)
+    })
+    .catch(err => res.status(400).json(err))
+}
+
+
+function messageCreate(req, res, next) {
+  req.body.user = req.currentUser
+  ChatBox
+    .findById(req.params.id)
+    .populate('members')
+    .populate('messages.user')
+    .then(chatBox => {
+      if (!chatBox) return res.status(404).json({ message: 'Not Found' })
+      chatBox.messages.push(req.body)
+      return chatBox.save()
+    })
+    .then(chatBox => res.status(201).json(chatBox))
+    .catch(next)
+}
+
+function messageDelete(req, res) {
+  ChatBox
+    .findById(req.params.id)
+    .then(chatBox => {
+      if (!chatBox) return res.status(404).json({ message: 'Not Found' })
+      const message = chatBox.messages.id(req.params.messageId)
+      if (!message.user.equals(req.currentUser._id)) return res.status(401).json({ message: 'Unauthorized' })
+      message.remove()
+      return chatBox.save()
+    })
+    .then(chatBox => res.status(204).json(chatBox))
+    .catch(err => res.json(err))
+}
+
+
+
+module.exports = { index, create, show, messageCreate, messageDelete }
+
+```
 
 We used Agile methodology to distribute work, holding ‘scrums’ regularly and tracking our project on Trello.
 
